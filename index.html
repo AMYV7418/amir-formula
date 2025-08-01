@@ -6,41 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Logos/Amir_formula_logo.png">
 </head>
 <body>
   <div class="pattern-bg"></div>
   <main>
-    <img src="https://github.com/AMYV7418/amir-formula/blob/main/Amir_formula_logo.png" alt="Amir-formula Logo" class="avatar">
+    <img src="Logos/Amir_formula_logo.png" alt="Amir Formula Logo" class="avatar">
     <h2>Amir Formula</h2>
-    <div class="subtitle">F1 Data analysis</div>
+    <div class="subtitle">addicted to Formula1</br>Formula1 Telemetry and Data</div>
     <h3>ما را دنبال کنید</h3>
-    <a href="#" target="_blank" class="btn youtube">
-      <span class="icon">▶️</span> کانال یوتیوب
+    <a href="https://t.me/Amir_formula" target="_blank" class="btn telegram">
+      <img src="Logos/telegram-logo.svg" alt="Telegram" class="btn-icon"> کانال تلگرام
     </a>
-    <a href="#" target="_blank" class="btn instagram">
-      <span class="icon">📸</span> اینستاگرام
+    <a href="https://www.instagram.com/amir_formula?igsh=MTYzb3BhMWZjOGRibw==" target="_blank" class="btn instagram">
+      <img src="Logos/instagram-logo.webp" alt="Instagram" class="btn-icon"> اینستاگرام
     </a>
-    <a href="#" target="_blank" class="btn telegram">
-      <span class="icon">✈️</span> کانال تلگرام
+    <a href="https://x.com/Amir_formula" target="_blank" class="btn x">
+      <img src="Logos/x-logo.png" alt="X" class="btn-icon"> صفحه X (توییتر)
     </a>
     <h4>ارتباط سریع و آسان</h4>
     <div class="quick-links">
-      <a href="#" class="quick discord" title="Discord">💬</a>
-      <a href="#" class="quick skype" title="Skype">🟦</a>
-      <a href="#" class="quick whatsapp" title="WhatsApp">🟩</a>
-      <a href="#" class="quick telegram" title="Telegram">✈️</a>
+      <a href="#" class="quick discord" title="Discord">
+        <img src="Logos/discord-logo.svg" alt="Discord" class="quick-icon">
+      </a>
+      <a href="amir.formula2025@gmail.com" class="quick email" title="Email">
+        <img src="Logos/gmail-logo.png" alt="Gmail" class="quick-icon gmail-icon">
+      </a>
+      <a href="#" class="quick whatsapp" title="WhatsApp">
+        <img src="Logos/whatsapp-logo.svg" alt="WhatsApp" class="quick-icon">
+      </a>
+      <a href="https://t.me/AMYV_17" class="quick telegram" title="Telegram">
+        <img src="Logos/telegram-logo.svg" alt="Telegram" class="quick-icon">
+      </a>
     </div>
-    <a href="#" class="web-link">
-      <span class="web-icon">🌐</span>
-      <div>
-        <div>آدرس وبسایت</div>
-        <small>برای خواندن مقاله ها کلیک کنید.</small>
+    <div class="accordion-container">
+      <button class="accordion">
+        <span class="accordion-title">درباره من</span>
+        <span class="arrow">&#9660;</span>
+      </button>
+      <div class="panel">
+        <p>
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+        </p>
       </div>
-    </a>
+    </div>
     <footer>
-      <img src="https://zil.ink/_nuxt/img/logo-black.9bd9b0e.svg" alt="Zilink" class="zilink-logo">
-      <div>ساخته شده توسط <b>ZiLink</b></div>
+      <img src="Logos/python-logo.png" alt="Python Logo" class="footer-logo">
+      <div class="footer-text">قدرت گرفته توسط پایتون</div>
     </footer>
   </main>
+  <script>
+    // Accordion functionality
+    document.querySelectorAll(".accordion").forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+        // Toggle arrow direction
+        let arrow = this.querySelector('.arrow');
+        if(this.classList.contains('active')){
+          arrow.innerHTML = "&#9650;";
+        } else {
+          arrow.innerHTML = "&#9660;";
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -10,12 +10,28 @@ body {
 }
 .pattern-bg {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 260px;
-  background: url('https://i.imgur.com/3Qd7Dkz.png'); /* Placeholder pattern */
-  background-size: cover;
-  opacity: .18;
-  z-index: 0;
+  top: 0; left: 0; width: 100vw; height: 390px;
   pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+  background:
+    url('Logos/Amir_formula_logo.png') 5vw 15px/80px 80px no-repeat,
+    url('Logos/Amir_formula_logo.png') 15vw 60px/56px 56px no-repeat,
+    url('Logos/Amir_formula_logo.png') 25vw 18px/72px 72px no-repeat,
+    url('Logos/Amir_formula_logo.png') 38vw 95px/64px 64px no-repeat,
+    url('Logos/Amir_formula_logo.png') 50vw 35px/90px 90px no-repeat,
+    url('Logos/Amir_formula_logo.png') 60vw 85px/60px 60px no-repeat,
+    url('Logos/Amir_formula_logo.png') 72vw 10px/70px 70px no-repeat,
+    url('Logos/Amir_formula_logo.png') 87vw 55px/60px 60px no-repeat,
+    url('Logos/Amir_formula_logo.png') 95vw 110px/80px 80px no-repeat,
+    url('Logos/formula1-icon.png') 12vw 120px/50px 50px no-repeat,
+    url('Logos/formula1-icon.png') 32vw 40px/60px 60px no-repeat,
+    url('Logos/formula1-icon.png') 65vw 70px/42px 42px no-repeat,
+    url('Logos/formula1-icon.png') 92vw 145px/54px 54px no-repeat,
+    url('Logos/data-analysis-icon.png') 4vw 180px/54px 54px no-repeat,
+    url('Logos/data-analysis-icon.png') 28vw 160px/56px 56px no-repeat,
+    url('Logos/data-analysis-icon.png') 55vw 145px/50px 50px no-repeat,
+    url('Logos/data-analysis-icon.png') 85vw 180px/54px 54px no-repeat;
 }
 main {
   position: relative;
@@ -73,12 +89,20 @@ h3 {
   gap: 10px;
 }
 .btn .icon { font-size: 1.2em; vertical-align: middle;}
-.btn.youtube { background: #E53935; }
 .btn.instagram {
   background: linear-gradient(90deg, #f58529 0%, #dd2a7b 60%, #515bd4 100%);
 }
 .btn.telegram { background: #2196F3; }
+.btn.x { background: #222; }
 .btn:hover, .btn:focus { filter: brightness(.94) saturate(1.2); box-shadow: 0 8px 30px #0002;}
+.btn-icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
 h4 {
   margin: 32px 0 14px 0;
   font-weight: normal;
@@ -97,18 +121,34 @@ h4 {
   justify-content: center;
   width: 48px; height: 48px;
   border-radius: 16px;
-  font-size: 1.55em;
   background: #eee;
   color: #555;
   transition: background .14s, color .14s, transform .1s;
   box-shadow: 0 1px 4px #0002;
   text-decoration: none;
+  font-size: 1.55em;
+  padding: 0;
 }
-.quick.discord { background: #7289da; color: #fff;}
-.quick.skype { background: #00aff0; color: #fff;}
+.quick.discord { background: #dbeafe; color: #5865F2;} /* lighter discord */
 .quick.whatsapp { background: #25d366; color: #fff;}
 .quick.telegram { background: #2196F3; color: #fff;}
+.quick.email { background: #fff;}
 .quick:hover { transform: translateY(-3px) scale(1.07); filter: brightness(.95);}
+.quick-icon {
+  width: 1.3em;
+  height: 1.3em;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
+.gmail-icon {
+  width: 1.2em;
+  height: auto;
+  aspect-ratio: 1.4 / 1;
+  background: none;
+  object-fit: contain;
+  margin-left: 0;
+}
 .web-link {
   display: flex;
   align-items: center;
@@ -136,18 +176,79 @@ h4 {
   display: block;
   margin-top: 2px;
 }
+.accordion-container {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 20px auto;
+  text-align: right;
+}
+.accordion {
+  background-color: #f1f1f1;
+  color: #444;
+  cursor: pointer;
+  padding: 15px 18px;
+  width: 100%;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  text-align: right;
+  outline: none;
+  font-size: 1.08em;
+  font-weight: bold;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion-title {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.09em;
+  color: #222;
+}
+.accordion.active, .accordion:hover {
+  background-color: #e5e5e5;
+}
+.arrow {
+  font-size: 1.0em;
+  margin-right: 8px;
+  color: #505050;
+  transition: transform 0.2s;
+}
+.panel {
+  padding: 0 18px;
+  background-color: #fafafa;
+  border-radius: 0 0 10px 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  direction: rtl;
+}
+.panel p {
+  margin: 14px 0 14px 0;
+  color: #444;
+  font-size: 1em;
+  line-height: 1.7;
+}
 footer {
   margin-top: 36px;
   color: #777;
   font-size: 1em;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.zilink-logo {
-  width: 62px;
-  margin: 0 auto 6px auto;
+.footer-logo {
+  width: 70px;
+  margin: 0 auto 4px auto;
   display: block;
 }
-footer b { color: #333 }
+.footer-text {
+  font-size: 1.12em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
 
 @media (max-width: 600px) {
   main {
@@ -159,11 +260,12 @@ footer b { color: #333 }
   .avatar {
     width: 85px; height: 85px; border-radius: 14px;
   }
-  .btn, .web-link { max-width: 98vw; font-size: 1em;}
-  .web-link { padding: 10px 6px; }
+  .btn, .web-link, .accordion-container { max-width: 98vw; font-size: 1em;}
+  .web-link, .accordion { padding: 10px 6px; }
   .quick-links { grid-template-columns: repeat(4, 38px); gap: 10px;}
   .quick { width: 38px; height: 38px; font-size: 1.15em; border-radius: 10px;}
   h2 { font-size: 1.22em;}
+  .pattern-bg { height: 200px; }
 }
 
 @media (min-width: 800px) {
@@ -173,7 +275,7 @@ footer b { color: #333 }
     max-width: 500px;
   }
   .avatar { width: 140px; height: 140px; border-radius: 28px;}
-  .btn, .web-link { font-size: 1.17em;}
+  .btn, .web-link, .accordion-container { font-size: 1.17em;}
   .quick-links { grid-template-columns: repeat(4, 56px); gap: 18px;}
   .quick { width: 56px; height: 56px; font-size: 1.9em;}
 }
